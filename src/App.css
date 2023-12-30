@@ -29,10 +29,12 @@ body {
 
 .lengthCounter {
   color: aliceblue;
-  margin: 19px;
+  margin-left: 12px;
   font-weight: 900;
   font-family: 'Times New Roman', Times, serif;
   font-size: larger;
   background-color: rgba(6, 1, 14, 0.941);
   box-sizing: content-box;
+  padding: 7px;
+
 }

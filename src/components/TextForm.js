@@ -68,10 +68,12 @@ export default function TextForm(props) {
     </div>
     <div className='container'>
       <h5 className='textSummary'>Know more about <b>"YOUR TEXT"</b> </h5>
-      <span className='lengthCounter'>{text.split(" ").length} - words &  {text.length} - characters </span>
-      <p>{0.008 * text.split(" ").length}  Minutes read</p>
+      <span className='lengthCounter'>{text.split(" ").filter((element)=>{return element.length!==0}).length} - words  </span>
+      <span className='lengthCounter'>{text.length}- Letters </span>
+          <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length}  Minutes read</p>
       <h4>Preview</h4>
-      <p>{text.length > 0 ? text : "Enter Text To Preview It"}</p>
+      <p style={{backgroundColor:'grey'}}>{text.length > 0 ? text : "Enter Text To Preview It"}</p>
+      
     </div>
   </>
   )
