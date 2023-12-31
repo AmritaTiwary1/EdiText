@@ -54,7 +54,7 @@ export default function TextForm(props) {
   }
   var textLetter=[...text].filter(x=>(x!==' ' && x!==(/[\r\n]+/))).length// this will not count the character which is null
   //below code will not count null words and will not increase word by going next line 
- var textWord=(text.split(" " || (/[\r\n]+/)).filter((element)=>{return element.length!==0}).length);
+ var textWord=(text.split(/\s+/).filter((element)=>{return element.length!==0}).length);
   return (<>
     <div className='container my-3'>
       <h3 className='textHeading'>{props.heading}</h3>
