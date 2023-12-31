@@ -52,27 +52,30 @@ export default function TextForm(props) {
 
     }
   }
+  var textLetter=[...text].filter(x=>(x!==' ' && x!==(/[\r\n]+/))).length// this will not count the character which is null
+  //below code will not count null words and will not increase word by going next line 
+ var textWord=(text.split(" " || (/[\r\n]+/)).filter((element)=>{return element.length!==0}).length);
   return (<>
     <div className='container my-3'>
       <h3 className='textHeading'>{props.heading}</h3>
       <div className="form-group">
         <textarea className="form-control" value={text} onChange={handleonChange} style={{ backgroundColor: props.mode === "light" ? 'white' : 'grey', color: 'black' }} id="myBox" rows="6"></textarea>
       </div>
-      <button className="btn btn-primary mx-2 my-2" onClick={handleUpperCase}>convert to uppercase</button>
-      <button className="btn btn-primary mx-2 my-2" onClick={handleLowerCase}>convert to lowercase</button>
-      <button className="btn btn-primary mx-2 my-2" onClick={handleRemoveText}>{RemoveText}</button>
-      <button className="btn btn-primary mx-2 my-2" onClick={handleCopyText}>{CopyText}</button>
-      <button className="btn btn-primary mx-2 my-2" onClick={handleClearText}>{ClearText}</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleUpperCase}>convert to uppercase</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleLowerCase}>convert to lowercase</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleRemoveText}>{RemoveText}</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleCopyText}>{CopyText}</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleClearText}>{ClearText}</button>
 
 
     </div>
     <div className='container'>
       <h5 className='textSummary'>Know more about <b>"YOUR TEXT"</b> </h5>
-      <span className='lengthCounter'>{text.split(" ").filter((element)=>{return element.length!==0}).length} - words  </span>
-      <span className='lengthCounter'>{text.length}- Letters </span>
-          <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length}  Minutes read</p>
+      <span className='lengthCounter'>{textWord} - words  </span>
+      <span className='lengthCounter'>{textLetter}- Letters </span>
+          <p>{0.008 *textWord}   Minutes read</p>
       <h4>Preview</h4>
-      <p style={{backgroundColor:'grey'}}>{text.length > 0 ? text : "Enter Text To Preview It"}</p>
+      <p style={{backgroundColor:'#2b1010',borderRadius:'12px', color:'white',padding:'9px'}}>{text.length > 0 ? text : "Enter Text To Preview It"}</p>
       
     </div>
   </>

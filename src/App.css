@@ -38,3 +38,18 @@ body {
   padding: 7px;
 
 }
+.aboutBox{
+  background-color:#050618;
+  width:190px;
+  color:white;
+  text-align: center;
+  border-radius: 12px;
+  padding: 12px;
+}
+.aboutText{
+  background-color:#050620;
+  color:white;
+  border-radius:12px;
+  padding:17px;
+font-family: 'Times New Roman', Times, serif;
+}

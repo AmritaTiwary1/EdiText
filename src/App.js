@@ -33,9 +33,9 @@ function App() {
   }
   return (
 
-    <div>
+    <>
       <Navbar title="EdiText" mode={mode} toggleMode={toggleMode}></Navbar>
-      <Alert alert={alert}></Alert>
+      <div style={{height:'30px'}}><Alert alert={alert}></Alert></div>
 
       <div className="container">
         <TextForm heading="Enter Text Here" mode={mode} showAlert={showAlert}></TextForm>
@@ -44,7 +44,7 @@ function App() {
 
 
 
-    </div>
+    </>
 
   );
 }
