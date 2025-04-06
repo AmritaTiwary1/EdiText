@@ -26,7 +26,7 @@ function App() {
       showAlert("Dark Mode Enabled");
     } else {
       setmode("light");
-      document.body.style.backgroundColor = 'wheat';
+      document.body.style.backgroundColor = 'gray';
       document.body.style.color = 'black';
       showAlert("Light Mode Enable");
     }
