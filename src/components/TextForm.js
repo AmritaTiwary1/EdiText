@@ -17,21 +17,19 @@ export default function TextForm(props) {
     if (text.length > 0) {
       let newText = text.toLowerCase();
       setText(newText);
-      props.showAlert("Changed To LowerCase");
     }
   }
   const handleUpperCase = () => {
     if (text.length > 0) {
       let newText = text.toUpperCase();
       setText(newText);
-      props.showAlert("Changed To UpperCase");
     }
   }
   const handleClearText = () => {
     if (text.length > 0) {
       setClearText("Cleared")
       setText("");
-      props.showAlert("Cleared ! ");
+    
     }
   }
   const handleCopyText = () => {
@@ -39,7 +37,7 @@ export default function TextForm(props) {
       var Text = document.getElementById("myBox");
       navigator.clipboard.writeText(Text.value);
       setCopyText("Copied");
-      props.showAlert("Copied !");
+    
 
     }
   }
