@@ -43,15 +43,6 @@ export default function TextForm(props) {
 
     }
   }
-  const handleRemoveText = () => {
-    if (text.length !== 0) {
-      let newText = text.split(/[ ]+/);
-      setText(newText.join(" "))
-      setRemoveText("Removed");
-      props.showAlert("Extra Spaces Has Removed ! ");
-
-    }
-  }
   var textLetter=[...text].filter(x=>(x!==' ' && x!==(/[\r\n]+/))).length// this will not count the character which is null
   //below code will not count null words and will not increase word by going next line 
  var textWord=(text.split(/\s+/).filter((element)=>{return element.length!==0}).length);
@@ -63,7 +54,6 @@ export default function TextForm(props) {
       </div>
       <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleUpperCase}>convert to uppercase</button>
       <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleLowerCase}>convert to lowercase</button>
-      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleRemoveText}>{RemoveText}</button>
       <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleCopyText}>{CopyText}</button>
       <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleClearText}>{ClearText}</button>
 
